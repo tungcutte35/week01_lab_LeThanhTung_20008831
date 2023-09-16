@@ -34,50 +34,22 @@ public class ControllerServlet extends HttpServlet {
         try{
             if (action != null) {
                 switch (action) {
-                    case "":
-                        sendHelloResponse(resp);
-                        break;
                     case "login":
                         forwardToPage("/web/login.jsp", req, resp);
-                        break;
-                    case "register":
-                        forwardToPage("/web/register.jsp", req, resp);
-                        break;
-                    case "edit-account":
-                        handleEditAccount(req, resp);
-                        break;
-                    case "list-account":
-                        handleListAccount(req, resp);
                         break;
                     case "create-account":
                         forwardToPage("/web/dashboard.jsp", req, resp);
                         break;
-                    case "delete-account":
-                        handleDeleteAccount(req, resp);
-                        break;
-                    case "list-role":
-                        handleListRole(req, resp );
-                        break;
-                    case "manager-role":
-                        handleManagerRole(req, resp);
-                        break;
                 }
             } else {
                 sendHelloResponse(resp);
+
             }} catch (Exception e) {
             throw new RuntimeException(e);
         }
     }
 
-    private void handleManagerRole(HttpServletRequest req, HttpServletResponse resp) throws Exception {
-        RoleService roleService = new RoleServiceImpl();
-        AccountService accountService = new AccountServiceImpl();
-        List<Role> roles = roleService.getAllRole();
-        List<Account> accounts = accountService.getAllAccount();
-        req.setAttribute("accounts", accounts);
-        req.setAttribute("roles", roles);
-        forwardToPage("/web/dashboard.jsp", req, resp);
-    }
+
 
     private void sendHelloResponse(HttpServletResponse resp) throws IOException {
         resp.setContentType("text/html");
@@ -89,61 +61,6 @@ public class ControllerServlet extends HttpServlet {
 
     private void forwardToPage(String page, HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.getRequestDispatcher(page).include(req, resp);
-    }
-
-    private void handleEditAccount(HttpServletRequest req, HttpServletResponse resp) throws Exception {
-        String accountId = req.getParameter("accountId");
-        AccountService accountService = new AccountServiceImpl();
-
-        try {
-            Account account = accountService.getAccountById(accountId);
-
-            if (account != null) {
-                req.setAttribute("account", account);
-                forwardToPage("/web/dashboard.jsp", req, resp);
-            } else {
-                sendErrorMessageAndRedirect(resp, "Not found account id = " + accountId);
-            }
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-    private void handleListAccount(HttpServletRequest req, HttpServletResponse resp) throws Exception {
-        AccountService accountService = new AccountServiceImpl();
-
-        try {
-            List<Account> accounts = accountService.getAllAccount();
-            req.setAttribute("accounts", accounts);
-            forwardToPage("/web/dashboard.jsp", req, resp);
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-    private void handleDeleteAccount(HttpServletRequest req, HttpServletResponse resp) throws Exception {
-        AccountService accountService = new AccountServiceImpl();
-        String accountId = req.getParameter("accountId");
-        accountService.deleteAccount(accountId);
-
-        resp.sendRedirect(env.appName + "/web?action=list-account");
-        sendErrorMessage(resp, "Not found account id = " + req.getParameter("accountId"));
-    }
-
-    private void sendErrorMessageAndRedirect(HttpServletResponse resp, String errorMessage) throws IOException {
-        resp.sendRedirect(env.appName + "/web/dashboard.jsp");
-        PrintWriter out = resp.getWriter();
-        out.println("<script type=\"text/javascript\">");
-        out.println("alert('" + errorMessage + "');");
-        out.println("</script>");
-    }
-    private void sendErrorMessage(HttpServletResponse resp, String errorMessage) throws IOException {
-        resp.setContentType("text/html");
-        PrintWriter out = resp.getWriter();
-        out.println("<html><body>");
-        out.println("<h1>Error</h1>");
-        out.println("<p>" + errorMessage + "</p>");
-        out.println("</body></html>");
     }
 
     @Override
@@ -158,17 +75,8 @@ public class ControllerServlet extends HttpServlet {
                     case "login":
                         handleLogin(req, resp);
                         break;
-                    case "register":
-                        handleRegister(req, resp);
-                        break;
-                    case "edit-account":
-                        handleEditAccountPost(req, resp, accountService);
-                        break;
                     case "create-account":
                         handleCreateAccount(req, resp, accountService);
-                        break;
-                    case "manager-role":
-                        handleManagerRolePost(req, resp, grandAccessService);
                         break;
                     default:
                         sendHelloResponse(resp);
@@ -179,31 +87,6 @@ public class ControllerServlet extends HttpServlet {
             }}catch (Exception e) {
             throw new RuntimeException(e);
         }
-    }
-
-    private void handleManagerRolePost(HttpServletRequest req, HttpServletResponse resp, GrandAccessService grandAccessService) throws Exception {
-        String accountId = req.getParameter("account");
-        String roleId = req.getParameter("role");
-        String note = req.getParameter("note");
-        String status = req.getParameter("status");
-        if (status.equals("1")) {
-            grandAccessService.insertGrandAccess(new GrantAccess(roleId,accountId , ISGRANT.ENABLED, note));
-        } else {
-            grandAccessService.insertGrandAccess(new GrantAccess(roleId, accountId, ISGRANT.DISABLED, note));
-        }
-        sendErrorMessageAndRedirect(resp, "Phân quyền không thành công");
-    }
-
-    private void handleListRole(HttpServletRequest req, HttpServletResponse resp) throws Exception {
-        RoleService roleService = new RoleServiceImpl();
-        List<Role> roles = roleService.getAllRole();
-        req.setAttribute("roles", roles);
-        forwardToPage("/web/dashboard.jsp", req, resp);
-    }
-
-
-    private void handleRegister(HttpServletRequest req, HttpServletResponse resp) {
-
     }
 
     private void handleLogin(HttpServletRequest req, HttpServletResponse resp) throws Exception {
@@ -221,12 +104,9 @@ public class ControllerServlet extends HttpServlet {
                 case 1:
                     handleAdminLogin(req, resp);
                     break;
-                case 0:
-                    handleUserLogin(resp);
-                    break;
+
                 case -1:
-                case -2:
-                    handleLoginError(req, resp);
+                    resp.sendRedirect(env.appName + "/web?action=login");
                     break;
             }
         } catch (Exception e) {
@@ -239,30 +119,20 @@ public class ControllerServlet extends HttpServlet {
         List<Account> accounts = accountService.getAllAccount();
         req.setAttribute("accounts", accounts);
         forwardToPage("/web/dashboard.jsp", req, resp);
-        sendSuccessMessage(resp, "Welcome admin!");
+        sendSuccessMessage(resp, "Welcome admin login !");
     }
 
-    private void handleUserLogin(HttpServletResponse resp) throws IOException {
-        resp.sendRedirect(env.appName + "/web/home.jsp");
-        sendSuccessMessage(resp, "Welcome user!");
-    }
 
-    private void handleLoginError(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-        resp.sendRedirect(env.appName + "/web?action=login");
-        sendErrorMessage(resp, "Username or password is incorrect!");
-    }
+
+
 
     private void sendSuccessMessage(HttpServletResponse resp, String message) throws IOException {
         resp.setContentType("text/html");
-        try (PrintWriter out = resp.getWriter()) {
-            out.println("<html><body>");
-            out.println("<script type=\"text/javascript\">");
-            out.println("alert('" + message + "');");
-            out.println("</script>");
-            out.println("</body></html>");
-        }
+        PrintWriter out = resp.getWriter();
+        out.println("<html><body>");
+        out.println("<h1>" + message + "</h1>");
+        out.println("</body></html>");
     }
-
 
     private void handleCreateAccount(HttpServletRequest req, HttpServletResponse resp, AccountService accountService) throws Exception {
         Map<String, String> inputData = extractInputData(req);
@@ -274,11 +144,11 @@ public class ControllerServlet extends HttpServlet {
                 sendSuccessMessage(resp, "Create account successfully!");
             } else {
                 resp.sendRedirect(env.appName + "/web?action=list-account");
-                sendErrorMessage(resp, "Create account failed!");
+
             }
         } else {
-            // Xử lý khi có lỗi trong dữ liệu đầu vào
-            sendErrorMessage(resp, "Invalid input data!");
+            resp.sendRedirect(env.appName + "/web?action=list-account");
+
         }
     }
 
@@ -321,24 +191,6 @@ public class ControllerServlet extends HttpServlet {
         }
     }
 
-
-    private void handleEditAccountPost(HttpServletRequest req, HttpServletResponse resp, AccountService accountService) throws Exception {
-        Map<String, String> inputData = extractInputData(req);
-        Account account = createAccountFromInputData(inputData);
-
-        if (account != null) {
-            if (accountService.editAccount(account)) {
-                resp.sendRedirect(env.appName + "/web?action=list-account");
-                sendSuccessMessage(resp, "Edit account successfully!");
-            } else {
-                resp.sendRedirect(env.appName + "/web?action=list-account");
-                sendErrorMessage(resp, "Edit account failed!");
-            }
-        } else {
-            // Xử lý khi có lỗi trong dữ liệu đầu vào
-            sendErrorMessage(resp, "Invalid input data!");
-        }
-    }
 
 
 
