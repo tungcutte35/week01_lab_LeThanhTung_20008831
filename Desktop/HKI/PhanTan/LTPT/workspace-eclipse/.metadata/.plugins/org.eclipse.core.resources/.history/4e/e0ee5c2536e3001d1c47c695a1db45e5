@@ -1,0 +1,20 @@
+package entities;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name="Hhurly_employee")
+public class HourlyEmployee extends Employee{
+	@Column(columnDefinition = "float")
+	private double hours;
+	private double wage;
+	@Override
+	public double earings() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+	
+
+}

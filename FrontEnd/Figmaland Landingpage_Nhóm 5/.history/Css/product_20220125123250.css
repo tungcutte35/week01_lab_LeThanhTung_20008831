@@ -1,0 +1,29 @@
+.header {
+  background: linear-gradient(0deg, #63c8e7 0%, rgba(233, 250, 255, 0) 100%);
+}
+.header-content {
+  display: flex;
+  flex-direction: column;
+}
+.header-desc {
+  text-align: center;
+  margin: 0 auto;
+  max-width: 825px;
+  margin-top: 80px;
+}
+.header-heading {
+  max-width: 692px;
+  font-size: 74px;
+  font-weight: 700;
+  line-height: 1.1351351351;
+  margin: 0 auto;
+  margin-bottom: 17px;
+}
+.header-text {
+  max-width: 750px;
+  text-align: center;
+  margin-bottom: 70px;
+}
+.header-free {
+  text-align: center;
+}

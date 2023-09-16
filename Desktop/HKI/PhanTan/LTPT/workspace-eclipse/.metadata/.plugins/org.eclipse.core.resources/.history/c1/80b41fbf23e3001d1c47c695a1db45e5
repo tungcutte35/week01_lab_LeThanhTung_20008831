@@ -1,0 +1,42 @@
+package entities;
+
+import java.util.Set;
+
+import jakarta.persistence.CollectionTable;
+import jakarta.persistence.Column;
+import jakarta.persistence.ElementCollection;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "staffs")
+public class Staff {
+	@Column(name = "age")
+	private int age;
+	 
+	@Id
+	@Column(name = "staff_id")
+	private long id;
+	
+	@Column(name = "staff_name", columnDefinition = "nvarchar(100)")
+	private String name;
+	
+	@Column(name = "[references]",columnDefinition = "varchar(255)")
+	private String references;
+	
+	@ElementCollection
+	@CollectionTable(
+	name = "phones",
+	joinColumns = {
+	@JoinColumn(name="staff_id")
+	}
+	)
+	@Column(name="number", nullable = false)
+	private Set<String> dsDienthoai;
+	
+	public Staff() {
+		// TODO Auto-generated constructor stub
+	}
+}

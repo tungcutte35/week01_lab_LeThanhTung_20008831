@@ -1,0 +1,36 @@
+.category {
+  margin-top: 20px;
+  &-container {
+    width: 1300px;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+  &-row {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  &-navbar {
+    max-width: 16, 667%;
+  }
+  &-icon {
+    margin-top: 50px;
+    color: rgba($color: #fff, $alpha: 0.8);
+    background-color: $primary-color;
+    padding: 18px 65px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-bottom: 30px;
+  }
+  &-item {
+    padding: 16px 0;
+  }
+  &-link {
+    color: $blue-second-color;
+    font-weight: 700;
+    // font-size: 18px;
+    line-height: calc(28 / 18);
+  }
+  &-iconnav {
+    margin-right: 12px;
+  }
+}

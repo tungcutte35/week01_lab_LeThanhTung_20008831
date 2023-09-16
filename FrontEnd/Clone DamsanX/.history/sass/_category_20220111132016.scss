@@ -1,0 +1,147 @@
+.category {
+  margin-top: 20px;
+  &-container {
+    width: 1300px;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+  &-row {
+    display: flex;
+    height: 100vh;
+    justify-content: flex-start;
+    background-image: url(https://dd5sp1fahktbq.cloudfront.net/FE/svg/class-room/background_left_side_home.svg);
+    background-repeat: no-repeat;
+    background-position: left;
+    background-position-y: 140px;
+  }
+  &-navbar {
+    max-width: 16.667%;
+    position: relative;
+    margin-right: 65px;
+    margin-left: 30px;
+  }
+  &-icon {
+    margin-top: 50px;
+    color: rgba($color: #fff, $alpha: 0.8);
+    background-color: $primary-color;
+    padding: 18px 65px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-bottom: 30px;
+    &:hover {
+      background-color: #e45428;
+      color: #fff;
+    }
+  }
+  &-item {
+    padding: 16px 0;
+  }
+  &-link {
+    color: $blue-second-color;
+    font-weight: 700;
+    &:hover {
+      color: $primary-color;
+    }
+  }
+  &-icon-nav {
+    margin-right: 4px;
+  }
+  &-content {
+    width: calc(100% - 16.667%);
+    background-color: #f1f5fb;
+    border-radius: 16px 0px 0px 24px;
+    padding: 70px 56px;
+  }
+  &-heading {
+    font-size: 28px;
+    color: #000;
+    margin-bottom: 28px;
+  }
+  &-list {
+    display: flex;
+    gap: 0 60px;
+    margin-bottom: 50px;
+    span {
+      font-weight: 700;
+      font-size: 22px;
+      color: $blue-second-color;
+      position: relative;
+      cursor: pointer;
+
+      &::after {
+        display: inline-block;
+        position: absolute;
+        content: "";
+        width: 30%;
+        height: 4px;
+        background-color: $blue-second-color;
+        bottom: -10px;
+        left: 1px;
+        border-radius: 10px;
+      }
+    }
+  }
+  &-desc {
+    font-weight: 600;
+    font-size: 22px;
+    cursor: pointer;
+  }
+  &-list-card {
+    display: flex;
+    // flex-wrap: wrap;
+  }
+  &-card {
+    background-color: #fff;
+    background-image: url(https://dd5sp1fahktbq.cloudfront.net/classrooms/themes/0d043769ab4c7e145bcb58c043984def4c813a75be3e86e9412308b524684e7d.svg);
+    background-repeat: no-repeat;
+    color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    position: relative;
+    margin-right: 20px;
+    width: 33.3333%;
+    cursor: pointer;
+    &:hover {
+      transform: translateY(-2px);
+    }
+  }
+  &-title {
+    margin-bottom: 10px;
+  }
+  &-subjects {
+    font-weight: 700;
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  &-teacher {
+    font-weight: 700;
+    font-size: 20px;
+  }
+  &-img {
+    width: 64px;
+    position: absolute;
+    right: 20px;
+    top: 104px;
+    img {
+      border-radius: 100rem;
+    }
+  }
+  &-more {
+    margin: 80px auto 50px;
+    color: #000;
+    font-weight: 500;
+  }
+}
+.tabcontent {
+  animation: fadeEffect 1s; /* Fading effect takes 1 second */
+}
+
+/* Go from zero to full opacity */
+@keyframes fadeEffect {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

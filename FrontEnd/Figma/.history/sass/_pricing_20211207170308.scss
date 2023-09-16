@@ -1,0 +1,98 @@
+.pricing {
+  margin-bottom: 230px;
+  &-container {
+    max-width: 1110px;
+    margin: 0 auto;
+  }
+  &-heading {
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 17px;
+  }
+  &-text {
+    text-align: center;
+    margin: 0 auto;
+    max-width: 532px;
+    margin-bottom: 90px;
+  }
+  &-buy {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0 50px;
+  }
+  &-buybox {
+    background-color: #fff;
+    border-radius: 10px;
+    color: #252b42;
+    width: 335px;
+    height: 607px;
+    margin: 0 auto;
+    &:hover {
+      background-color: $primary-color;
+      color: #fff;
+      transform: scale(1.1);
+    }
+  }
+  &-headbox {
+    font-size: 20px;
+    line-height: calc(28 / 20);
+    margin-bottom: 3px;
+    text-align: center;
+    margin-top: 40px;
+    &:hover {
+      color: #fff;
+    }
+  }
+  &-desc {
+    font-size: 16px;
+    line-height: calc(23 / 16);
+    font-weight: 400;
+    max-width: 148px;
+    text-align: center;
+    margin: 0 auto;
+    // color: #252b42;
+    margin-bottom: 30px;
+  }
+  &-price {
+    color: #252b42;
+    font-size: 74px;
+    line-height: calc(84 / 74);
+    margin: 0 auto;
+  }
+  &-prices {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  &-dolar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0 10px;
+  }
+  &-month {
+    font-size: 16px;
+    line-height: calc(23 / 16);
+    color: #374754;
+    padding-top: 3px;
+  }
+  &-more {
+    margin-right: 30px;
+  }
+  &-menu {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  &-item {
+    padding: 15px 0;
+  }
+  &-link {
+    color: #252b42;
+    // padding: 10px;
+  }
+  &-btn {
+    text-align: center;
+  }
+}

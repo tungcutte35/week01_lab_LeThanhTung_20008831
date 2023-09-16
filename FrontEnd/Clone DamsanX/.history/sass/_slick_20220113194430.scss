@@ -1,0 +1,63 @@
+.slick-initialized .slick-slide {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  padding: 40px 50px;
+}
+.slick-dots {
+  margin-left: 110px;
+  margin-top: -20px;
+  ul {
+    display: flex;
+    align-items: center;
+    display: none;
+  }
+  li {
+    padding-left: 10px;
+  }
+  button {
+    border: none;
+    font-size: 20px;
+    display: flex;
+    justify-content: space-between;
+    background-color: $blue-second-color;
+    color: #fff;
+    border: 1px solid #ccc;
+    text-align: center;
+    padding: 3px 7px;
+    border-radius: 100rem;
+  }
+}
+.slick-dots {
+  display: flex;
+}
+@media screen and (min-width: 1023px) {
+  .slick-initialized,
+  .slick-slide {
+    gap: 0 50px;
+  }
+  .slick-initialized:first-child {
+    gap: 0 400px;
+  }
+}
+@media screen and (max-width: 1023px) {
+  .slick-initialized .slick-slide {
+    flex-direction: column;
+    margin-top: -60px;
+    margin-bottom: 90px;
+  }
+  .slick-slide:nth-child(3) {
+    flex-direction: column-reverse;
+  }
+  .slick-track:nth(7) {
+    flex-direction: column-reverse;
+  }
+  .slick-current {
+    flex-direction: column-reverse;
+  }
+
+  .slick-initialized .slick-slide img {
+    width: 280px;
+    margin: 0 180px;
+  }
+}

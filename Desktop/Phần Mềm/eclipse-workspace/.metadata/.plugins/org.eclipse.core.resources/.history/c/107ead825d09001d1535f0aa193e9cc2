@@ -1,0 +1,44 @@
+package TEST3CAU2_20008831;
+import java.util.LinkedHashSet;
+import java.util.Scanner;
+import java.util.Iterator;
+
+public class TestBai2 {
+	public static void main(String[] args) {
+		 LinkedHashSet<Bai2> set = new LinkedHashSet<Bai2>();
+//		 Bai2 sv1 = new Bai2("1", "Iphone 5", 2, 15);
+//		 Bai2 sv2 = new Bai2("2", "Samsung sII",3, 11);
+//		 Bai2 sv3 = new Bai2("3", "Oppo pro",22, 111);
+//		 set.add(sv1);
+//		 set.add(sv2);
+//		 set.add(sv3);
+		 Scanner sc = new Scanner(System.in);
+		 int soNhanVien = sc.nextInt();
+		 for (int i = 0; i < soNhanVien; i++) {
+	            System.out.println("Nhap thong tin nhan vien thu " + (i + 1) + ":");
+	            System.out.print("Chon loai nhan vien: \n1.Giang Vien "
+	            		+ "\n2.Nghiem Cuu Vien \n3.Nhan Vien Van Phong): ");
+	            int choose = scanner.nextInt();
+	             
+	            if (choose == 1) {
+	                nhanVien[i] = new GiangVien();
+	            } else if (choose == 2) {
+	                nhanVien[i] = new NghiemCuuVien();
+	            }
+	            else if (choose == 3) {
+	                nhanVien[i] = new NhanVienVanPhong();
+	            }
+	            nhanVien[i].nhapThongTin();
+	        }
+		// show set
+	        Iterator<Bai2> iterator = set.iterator();
+	        Bai2 sv;
+	        while (iterator.hasNext()) {
+	            sv = iterator.next();
+	            System.out.println(sv.toString());
+	        }
+		
+
+	}
+}
+

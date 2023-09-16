@@ -1,0 +1,37 @@
+.slick-initialized .slick-slide {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  padding: 40px 50px;
+}
+.slick-dots {
+  margin-left: 110px;
+  margin-top: -20px;
+  ul {
+    display: flex;
+    align-items: center;
+    display: none;
+  }
+  li {
+    padding-left: 10px;
+  }
+  button {
+    border: none;
+    font-size: 20px;
+    display: flex;
+    justify-content: space-between;
+    background-color: $blue-second-color;
+    color: #fff;
+    border: 1px solid #ccc;
+    text-align: center;
+    padding: 3px 7px;
+    border-radius: 100rem;
+  }
+}
+.slick-dots {
+  display: flex;
+}
+
+
+}
+

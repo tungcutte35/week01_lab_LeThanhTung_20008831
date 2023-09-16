@@ -1,0 +1,10 @@
+.slick-initialized .slick-slide {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  padding: 52px 50px;
+}
+.slick-prev,
+.slick-arrow {
+  display: none;
+}

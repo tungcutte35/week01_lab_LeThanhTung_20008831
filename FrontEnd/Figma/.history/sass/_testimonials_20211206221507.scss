@@ -1,0 +1,36 @@
+.testimonials {
+  &-container {
+    max-width: 987px;
+    margin: 0 auto;
+  }
+  &-heading {
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 80px;
+  }
+  &-imgs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+  }
+  &-text {
+    max-width: 947px;
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 50px;
+  }
+  &-author {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0 13px;
+    margin-bottom: 50px;
+  }
+  &-desc {
+    padding-bottom: 10px;
+  }
+  &-button {
+    text-align: center;
+  }
+}

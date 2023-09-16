@@ -1,0 +1,40 @@
+.teacher {
+  &-container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0 80px;
+  }
+  &-img {
+    max-width: 493px;
+    height: 600px;
+  }
+  &-heading {
+    font-size: 52px;
+    line-height: calc(59 / 52);
+    color: $primary-color;
+    margin-bottom: 40px;
+    font-weight: 700;
+    span {
+      color: $blue-color;
+    }
+  }
+  &-desc {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0 35px;
+    margin-bottom: 35px;
+    img {
+      max-width: 26px;
+      height: 26px;
+    }
+    &-content {
+      max-width: 429px;
+      line-height: calc(33 / 22);
+    }
+  }
+}

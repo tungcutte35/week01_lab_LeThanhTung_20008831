@@ -1,0 +1,43 @@
+.download {
+  margin-bottom: 250px;
+  margin-left: 62px;
+  &-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0 71px;
+    width: 100%;
+    max-width: 1156px;
+    position: relative;
+  }
+  &-firsd {
+    max-width: 420px;
+    padding-left: 145px;
+  }
+  &-heading {
+    max-width: 254px;
+    font-size: 36px;
+    line-height: calc(47 / 36);
+    padding-bottom: 66px;
+    position: relative;
+    &::after {
+      content: "";
+      position: absolute;
+      width: 56px;
+      height: 2px;
+      bottom: 40px;
+      left: 0;
+      border-radius: 6px;
+      background-color: black;
+    }
+  }
+  &-content {
+    max-width: 410px;
+    font-size: 20px;
+    line-height: calc(30 / 18);
+    margin-bottom: 37px;
+  }
+  &-icon {
+    padding-left: 15px;
+  }
+}

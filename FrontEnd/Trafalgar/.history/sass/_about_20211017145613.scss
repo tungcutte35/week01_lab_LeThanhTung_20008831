@@ -1,0 +1,39 @@
+.about {
+  margin-bottom: 150px;
+  background-color: #fbfbfb;
+  max-width: 1170px;
+  margin-left: 70px;
+  &-container {
+    display: grid;
+    grid-template-columns: ;
+    grid-gap: ;
+    padding: 30px 70px 0 100px;
+  }
+  &-heading {
+    font-size: 64px;
+    font-weight: 300;
+    color: $gray-color;
+    position: absolute;
+    top: -110px;
+  }
+  &-content {
+    font-size: 16px;
+    font-weight: 300;
+    max-width: 400px;
+  }
+  &-firsd {
+    max-width: 270px;
+    &:first-child {
+    }
+  }
+  &-second {
+    width: 270px;
+  }
+  &-img {
+    max-width: 270px;
+  }
+  &-third {
+    max-width: 400px;
+    position: relative;
+  }
+}

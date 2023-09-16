@@ -1,0 +1,26 @@
+.header {
+  background-color: #070d18;
+  padding-top: 20px;
+  position: relative;
+  padding-bottom: 88px;
+  &-about {
+    padding-bottom: 0;
+  }
+  &-logo {
+    margin-bottom: 27px;
+    margin-left: 20px;
+  }
+  &:after {
+    position: absolute;
+    content: " ";
+    background-color: rgba(255, 255, 255, 0.29);
+    width: 100%;
+    height: 3px;
+    left: -0.05px;
+  }
+  &-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}

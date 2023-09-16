@@ -1,0 +1,68 @@
+.teacher {
+  margin-bottom: 130px;
+  &-container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0 80px;
+  }
+  &-img {
+    width: 493px;
+    height: 600px;
+  }
+  &-heading {
+    max-width: 454px;
+    font-size: 52px;
+    line-height: calc(59 / 52);
+    color: $primary-color;
+    margin-bottom: 40px;
+    font-weight: 700;
+    span {
+      color: $blue-color;
+    }
+  }
+  &-desc {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0 35px;
+    margin-bottom: 34px;
+    img {
+      max-width: 26px;
+      height: 26px;
+    }
+    &-content {
+      max-width: 429px;
+      line-height: calc(33 / 22);
+    }
+  }
+  @media screen and (max-width: 1024px) {
+    &-img {
+      height: 435px;
+      width: 500px;
+    }
+    &-container {
+      padding: 0 40px;
+    }
+  }
+
+  @media screen and (min-width: 1023px) {
+    &-container {
+      flex-direction: column-reverse;
+      gap: 15px 0;
+      // padding: 0 40px;
+    }
+    &-content {
+      padding: 0;
+      max-width: 429px;
+    }
+    &-desc {
+      max-width: 800px;
+    }
+  }
+  @media screen and (max-width: 768px) {
+  }
+}

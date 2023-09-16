@@ -1,0 +1,99 @@
+package ATM;
+
+import java.util.Scanner;
+
+public abstract class Account {
+	protected int blance;
+	protected int transactions;
+	protected long soTK;
+	protected String tenTK;
+	protected double soTienTrongTK = 50;
+	
+	public Account() {
+	}
+
+	public Account(int blance) {
+		super();
+		this.blance = blance;
+	}
+	
+	public long getSoTK() {
+		return soTK;
+	}
+
+	public void setSoTK(long soTK) {
+		this.soTK = soTK;
+	}
+
+	public String getTenTK() {
+		return tenTK;
+	}
+
+	public void setTenTK(String tenTK) {
+		this.tenTK = tenTK;
+	}
+
+	public double getSoTienTrongTK() {
+		return soTienTrongTK;
+	}
+
+	public void setSoTienTrongTK(double soTienTrongTK) {
+		this.soTienTrongTK = soTienTrongTK;
+	}
+
+	public int getBlance() {
+		return blance;
+	}
+
+	public void setBlance(int blance) {
+		this.blance = blance;
+	}
+
+	public int getTransactions() {
+		return transactions;
+	}
+
+	public void setTransactions(int transactions) {
+		this.transactions = transactions;
+	}
+
+	// số tiền gửi vào phải lớn hơn 0
+	public boolean deposit(int money) {
+		if (money > 0) {
+			transactions++;
+			return true;
+		}
+		return false;
+	}
+
+	public abstract int endMonthChange();
+	
+
+	public void endMonth() {
+		System.out.println("Blance: " + blance);
+		System.out.println("Transactions: " + transactions);
+		System.out.println("Fee: " + endMonthChange());
+
+	}
+	public void nhapThongTin() {
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("Nhap blance: ");
+		blance = scanner.nextInt();
+		System.out.println("Nhap transactions: ");
+		transactions = scanner.nextInt();
+		System.out.println("Nhap STK: ");
+		soTK = scanner.nextLong();
+	}
+
+	
+
+	@Override
+	public String toString() {
+		return "Account [blance=" + blance + ", transactions=" + transactions + "]";
+	}
+	// số tiền rút ra phải bé hơn số tiền còn lkaij
+	public abstract boolean withdraw(int money);
+	protected abstract double napTien();
+	protected abstract double rutTien();
+
+}

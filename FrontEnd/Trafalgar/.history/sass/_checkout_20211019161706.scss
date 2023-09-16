@@ -1,0 +1,30 @@
+.checkout {
+  margin-bottom: 100px;
+  &-main {
+  }
+  &-header {
+    text-align: center;
+    margin-bottom: 107px;
+  }
+  &-heading {
+    font-size: 36px;
+    line-height: calc(56 / 36);
+    position: relative;
+    &::after {
+      content: "";
+      position: absolute;
+      height: 2px;
+      width: 56px;
+      bottom: -26px;
+      left: 48%;
+      border-radius: 5px;
+      background-color: black;
+    }
+  }
+  &-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 0 35px;
+    max-width: 1120px;
+  }
+}

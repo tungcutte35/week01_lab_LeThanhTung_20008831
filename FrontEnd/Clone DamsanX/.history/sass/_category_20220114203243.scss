@@ -1,0 +1,271 @@
+.category {
+  margin-top: 20px;
+  &-container {
+    width: 1300px;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+  &-row {
+    display: flex;
+    height: 100vh;
+    justify-content: flex-start;
+    background-image: url(https://dd5sp1fahktbq.cloudfront.net/FE/svg/class-room/background_left_side_home.svg);
+    background-repeat: no-repeat;
+    background-position: left;
+    background-position-y: 140px;
+  }
+  &-navbar {
+    max-width: 16.667%;
+    position: relative;
+    margin-right: 65px;
+    margin-left: 30px;
+  }
+  &-icon {
+    margin-top: 50px;
+    color: rgba($color: #fff, $alpha: 0.8);
+    background-color: $primary-color;
+    padding: 18px 65px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-bottom: 30px;
+    &:hover {
+      background-color: #e45428;
+      color: #fff;
+    }
+  }
+  &-item {
+    padding: 16px 0;
+  }
+  &-link {
+    color: $blue-second-color;
+    font-weight: 700;
+    padding: 4px 0px;
+    &:hover {
+      color: $primary-color;
+    }
+  }
+  &-icon-nav {
+    margin-right: 4px;
+  }
+  &-content {
+    width: calc(100% - 16.667%);
+    background-color: #f1f5fb;
+    border-radius: 16px 0px 0px 24px;
+    padding: 70px 56px 700px;
+  }
+  &-heading {
+    font-size: 28px;
+    color: #000;
+    margin-bottom: 28px;
+  }
+  &-list {
+    display: flex;
+    gap: 0 60px;
+
+    span {
+      font-weight: 700;
+      font-size: 22px;
+      color: $blue-second-color;
+      position: relative;
+      cursor: pointer;
+    }
+  }
+  &-desc {
+    font-weight: 600;
+    font-size: 22px;
+    cursor: pointer;
+  }
+  &-list-card {
+    display: flex;
+    // flex-wrap: wrap;
+  }
+  &-card {
+    background-color: #fff;
+    background-image: url(https://dd5sp1fahktbq.cloudfront.net/classrooms/themes/0d043769ab4c7e145bcb58c043984def4c813a75be3e86e9412308b524684e7d.svg);
+    background-repeat: no-repeat;
+    color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    position: relative;
+    margin-right: 20px;
+    width: 33.3333%;
+    cursor: pointer;
+    &:hover {
+      transform: translateY(-2px);
+    }
+  }
+  &-title {
+    margin-bottom: 10px;
+  }
+  &-subjects {
+    font-weight: 700;
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  &-teacher {
+    font-weight: 700;
+    font-size: 20px;
+  }
+  &-img {
+    width: 64px;
+    position: absolute;
+    right: 20px;
+    top: 104px;
+    img {
+      border-radius: 100rem;
+    }
+  }
+  &-more {
+    margin: 80px auto 50px;
+    color: #000;
+    font-weight: 500;
+  }
+  @media screen and (max-width: 1023.98px) {
+    &-navbar {
+      display: none;
+    }
+    &-content {
+      width: 100%;
+      padding: 60px 15px 0;
+    }
+    &-heading {
+      font-size: 30px;
+      margin: 0 auto;
+      text-align: center;
+      margin-right: 28px;
+    }
+    &-list-card {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 40px 0;
+      margin-left: 40px;
+      margin-top: 50px;
+    }
+    &-card {
+      width: 86%;
+    }
+    .tab {
+      text-align: center;
+      margin: 50px 240px 30px;
+    }
+    .tablinks {
+      margin-right: 16px;
+    }
+  }
+  @media screen and (max-width: 767.98px) {
+    &-navbar {
+      display: none;
+    }
+    &-content {
+      width: 100%;
+      padding: 60px 0px 0;
+      height: 100%;
+    }
+    &-heading {
+      font-size: 30px;
+      margin: 0 auto;
+      text-align: center;
+      margin-right: 18px;
+    }
+    &-list-card {
+      display: flex;
+      flex-direction: column;
+      margin-left: 50px;
+      margin-top: 50px;
+    }
+    &-card {
+      width: 86%;
+    }
+    .tab {
+      text-align: center;
+      margin: 50px 0 30px 100px;
+    }
+    .tablinks {
+      margin-right: 12px;
+    }
+    .tabcontent-desc {
+      padding: 10px 80px;
+      margin-bottom: 10px;
+    }
+    .tabcontent-img {
+      width: 414px;
+    }
+  }
+}
+
+.tab {
+  overflow: hidden;
+  margin-top: 50px;
+  margin-bottom: 30px;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  color: rgb(124, 115, 115);
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  margin-right: 26px;
+  transition: 0.3s;
+  font-size: 18px;
+  font-weight: 600;
+  position: relative;
+}
+/* Create an active/current tablink class */
+.tab button.active {
+  color: $blue-second-color;
+}
+/* Style the tab content */
+#classteaching {
+  display: none;
+}
+.tabcontent {
+  &:last-child {
+    display: none;
+  }
+
+  &-heading {
+    font-size: 28px;
+    line-height: calc(38 / 28);
+    color: #0c173c;
+    margin: 0 auto;
+    text-align: center;
+  }
+  &-desc {
+    color: #0c173c;
+    font-size: 22px;
+    line-height: 31.43px;
+    padding: 8px 0px 32px;
+    text-align: center;
+    font-weight: 400;
+    span {
+      color: $primary-color;
+    }
+  }
+  &-btn {
+    background-color: #f26943;
+    border-radius: 8px;
+    box-shadow: #0c173c 0px 0px 1px 0px;
+    color: #ffffff;
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 30.6px;
+    padding: 1px 15px 2px;
+    text-align: center;
+    border: none;
+    outline: none;
+    margin: 0 auto;
+    &:hover {
+      background-color: #e45428;
+      color: #fff;
+    }
+  }
+  &-img {
+    width: 639px;
+    margin: 0 auto;
+  }
+}

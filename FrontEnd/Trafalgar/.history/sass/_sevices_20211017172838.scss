@@ -1,0 +1,19 @@
+.sevices {
+  &-heading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 36px;
+    line-height: calc(56 / 36);
+    position: relative;
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -23px;
+      width: 56px;
+      height: 2px;
+      background-color: black;
+      // margin-bottom: 60px;
+    }
+  }
+}

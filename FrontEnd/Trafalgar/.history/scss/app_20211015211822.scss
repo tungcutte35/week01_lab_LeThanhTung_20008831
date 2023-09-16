@@ -1,0 +1,10 @@
+.container {
+  color: red;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  &-item {
+    font-language-override: normal;
+    font-size: 12px;
+  }
+}

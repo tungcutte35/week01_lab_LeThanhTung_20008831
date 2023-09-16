@@ -1,0 +1,73 @@
+package model;
+
+import java.io.Serializable;
+import java.util.Date;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
+@Entity
+public class DetailMuonSach implements Serializable {
+	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Date ngayMuon;
+	private Date ngayTra;
+	private long tienCoc;
+	
+	@Id
+	@ManyToOne
+	private DocGia dg;
+	@Id
+	@ManyToOne
+	private Sach sach;
+	
+	public DetailMuonSach() {
+	
+	}
+
+	public DetailMuonSach(Date ngayMuon, Date ngayTra, long tienCoc) {
+		super();
+		this.ngayMuon = ngayMuon;
+		this.ngayTra = ngayTra;
+		this.tienCoc = tienCoc;
+	}
+
+	public Date getNgayMuon() {
+		return ngayMuon;
+	}
+
+	public void setNgayMuon(Date ngayMuon) {
+		this.ngayMuon = ngayMuon;
+	}
+
+	public Date getNgayTra() {
+		return ngayTra;
+	}
+
+	public void setNgayTra(Date ngayTra) {
+		this.ngayTra = ngayTra;
+	}
+
+	public long getTienCoc() {
+		return tienCoc;
+	}
+
+	public void setTienCoc(long tienCoc) {
+		this.tienCoc = tienCoc;
+	}
+
+	@Override
+	public String toString() {
+		return "DetailMuonSach [ngayMuon=" + ngayMuon + ", ngayTra=" + ngayTra + ", tienCoc=" + tienCoc + ", dg=" + dg
+				+ ", sach=" + sach + "]";
+	}
+
+	
+
+	
+	
+	
+	
+	
+}

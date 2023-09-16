@@ -1,0 +1,16 @@
+.about {
+  &-container {
+    max-width: 1097px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0 30px;
+  }
+  &-content {
+    padding: 54px 56px 75px 30px;
+    background-color: #fff;
+    box-shadow: #0c173c 0px 2px 8px 0px;
+    border-radius: 16px;
+  }
+}

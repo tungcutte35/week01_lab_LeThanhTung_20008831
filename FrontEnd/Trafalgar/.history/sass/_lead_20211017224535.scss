@@ -1,0 +1,35 @@
+.lead {
+  margin-bottom: 230px;
+  &-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0 137px;
+  }
+  &-img {
+    width: 100%;
+    max-width: 650px;
+  }
+  &-firsd {
+    max-width: 486px;
+  }
+  &-heading {
+    font-size: 36px;
+    line-height: calc(56 / 36);
+    position: relative;
+    &::after {
+      position: absolute;
+      width: 56px;
+      height: 2px;
+      bottom: -30px
+      border-radius: 10px;
+      background-color: black;
+    }
+  }
+  &-content {
+    max-width: 410px;
+    font-size: 18px;
+    line-height: calc(30 / 18);
+    margin-bottom: 37px;
+  }
+}

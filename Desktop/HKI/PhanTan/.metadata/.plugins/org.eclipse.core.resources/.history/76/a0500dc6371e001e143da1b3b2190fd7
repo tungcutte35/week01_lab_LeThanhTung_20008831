@@ -1,0 +1,54 @@
+package dao;
+
+import java.util.Calendar;
+
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.EntityTransaction;
+import model.DetailMuonSach;
+import model.DocGia;
+import model.Sach;
+
+public class DetailDAO {
+	private EntityManager em;
+	private EntityTransaction trans;
+	
+	public DetailDAO(EntityManager em) {
+		this.em = em;
+		trans = em.getTransaction();
+	}
+	public void insert(DetailMuonSach t) {
+		try {
+			trans.begin();
+			em.persist(t);
+			trans.commit();
+		} catch (Exception e) {
+			trans.rollback();
+			e.printStackTrace();
+		}
+	}
+	
+//	private boolean themDetailMuonSach(DocGia docGia, Sach sach) {
+//Calendar calendar = Calendar.getInstance();
+//		
+//		Long tienCoc = sach.getGiaBan();
+//		if (sach.getNamXB() <= 2015) {
+//			tienCoc = (long)(tienCoc * 0.5);
+//		}
+//
+//		DetailMuonSach chiTietMuon = new DetailMuonSach();
+//		chiTietMuon.setDocGia(docGia);
+//		chiTietMuon.setSach(sach);
+//		chiTietMuon.setNgayMuon(calendar.getTime());
+//		chiTietMuon.setNgayTra(null);
+//		chiTietMuon.setTienCoc(tienCoc);
+//		try {
+//			trans.begin();
+//			em.persist(docGia);
+//			em.persist(sach);
+//			em.persist(chiTietMuon);
+//			trans.commit();
+//		} catch (Exception e) {
+//			trans.rollback();
+//		}
+	}
+}

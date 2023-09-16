@@ -1,0 +1,46 @@
+package BaiTapThucHanh3;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+ 
+public class Test {
+ 
+    public static void main(String[] args) {
+        ArrayList<HocSinh> arrHoSo = new ArrayList<>();
+        int n;
+        HocSinh hoSoHocSinh;
+        Scanner scanner = new Scanner(System.in);
+         
+        System.out.println("Nhap so hoc sinh: ");
+        n = scanner.nextInt();
+         
+        for (int i = 0; i < n; i++) {
+            System.out.println("Nhap thong tin hoc sinh thu " + (i + 1) + ": ");
+            hoSoHocSinh = new HocSinh();
+            hoSoHocSinh.nhapThongTinHoSo();
+            arrHoSo.add(hoSoHocSinh);
+        }
+         
+        for (int i = 0; i < arrHoSo.size(); i++) {
+            System.out.println("\nTthong tin hoc sinh thu " + (i+1) + ": ");
+            arrHoSo.get(i).hienThiThongTinHoSo();
+        }
+         
+        System.out.println("Nhung sinh vien que o thai nguyen va sinh nam 1985 la: ");
+        for (int i = 0; i < arrHoSo.size(); i++) {
+            if (arrHoSo.get(i).getQueQuan().equalsIgnoreCase("Thai Nguyen")) {
+                arrHoSo.get(i).hienThiThongTinHoSo();
+            }
+        }
+         
+        System.out.println("Nhung sinh vien hoc lop 10A1 la: ");
+        for (int i = 0; i < arrHoSo.size(); i++) {
+            if (arrHoSo.get(i).getLop().equalsIgnoreCase("10A1")) {
+                arrHoSo.get(i).hienThiThongTinHoSo();
+            }
+        }
+    }
+ 
+}
+	  
+
