@@ -18,9 +18,9 @@
             <label for="password" class="block font-medium text-gray-700">Password</label>
             <input type="password" id="password" name="password" class="border p-2 rounded w-full px-5" required>
         </div>
-        <button type="submit" class="bg-blue-500 text-white p-2 rounded hover:bg-blue-600">Login</button>
+        <button type="submit" class="bg-green-500 text-white p-2 rounded hover:bg-blue-600">Login</button>
         <br>
-        <span>If you don't have account <a class="text-blue-500 cursor-pointer" href="/web?action=register"> Click here to register </a></span>
+        <span>If you don't have account <a class="text-green-500 cursor-pointer" href="/web?action=register"> Click here to register </a></span>
     </form>
 </div>
 </body>

@@ -7,4 +7,6 @@ public interface ConnectDB {
     //  Database credentials
     String USER = "root";
     String PASS = "1";
+
+
 }

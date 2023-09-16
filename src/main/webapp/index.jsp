@@ -6,7 +6,7 @@
 </head>
 <body>
   <h1><%= "Lê Thanh Tùng - 20008831 - LAB WEEK01!" %></h1>
-  <a href="/web?action=login" >Click here to countine</a>
+  <a href="/web?action=login" >Click to Login</a>
 <br/>
 </body>
 </html>

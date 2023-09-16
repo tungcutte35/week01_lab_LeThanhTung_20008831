@@ -11,13 +11,13 @@
 <body class="bg-gray-100">
 <div class="flex">
     <!-- Menu bên trái (sidebar) -->
-    <aside class="bg-gray-800 text-white h-screen w-1/5 p-4">
-        <h1 class="text-2xl font-semibold mb-4">Dashboard</h1>
+    <aside class="bg-green-400 text-white h-screen w-1/5 p-4">
+        <h1 class="text-2xl text-black font-semibold mb-4">Dashboard</h1>
         <ul>
-            <li><a href="${pageContext.request.contextPath}/web?action=list-account" class="block py-2">Danh sách tài khoản</a></li>
-            <li><a href="${pageContext.request.contextPath}/web?action=create-account" class="block py-2">Thêm tài khoản</a></li>
-            <li><a href="${pageContext.request.contextPath}/web?action=list-role" class="block py-2">Danh sách quyền</a></li>
-            <li><a href="${pageContext.request.contextPath}/web?action=manager-role" class="block py-2">Cấp quyền</a></li>
+            <li><a href="${pageContext.request.contextPath}/web?action=list-account" class="text-black block py-2">Danh sách tài khoản</a></li>
+            <li><a href="${pageContext.request.contextPath}/web?action=create-account" class="text-black block py-2">Thêm tài khoản</a></li>
+            <li><a href="${pageContext.request.contextPath}/web?action=list-role" class=" text-black block py-2">Danh sách quyền</a></li>
+            <li><a href="${pageContext.request.contextPath}/web?action=manager-role" class=" text-black block py-2">Cấp quyền</a></li>
         </ul>
     </aside>
 
