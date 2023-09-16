@@ -11,6 +11,8 @@
 <body class="bg-gray-100">
 <div class="flex">
     <!-- Menu bên trái (sidebar) -->
+
+
     <aside class="bg-green-400 text-white h-screen w-1/5 p-4">
         <h1 class="text-2xl text-black font-semibold mb-4">Dashboard</h1>
         <ul>
